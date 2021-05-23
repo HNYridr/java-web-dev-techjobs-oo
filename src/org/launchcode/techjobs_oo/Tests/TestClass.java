@@ -12,6 +12,8 @@ public class TestClass {
     private Job test_jobOne;
     private Job test_jobTwo;
     private Job test_jobThree;
+    private Job test_jobFour;
+    private Job test_jobFive;
 
 
     @Before
@@ -33,5 +35,12 @@ public class TestClass {
             assertTrue(test_jobThree.getLocation() instanceof Location);
             assertTrue(test_jobThree.getPositionType() instanceof PositionType);
             assertTrue(test_jobThree.getCoreCompetency() instanceof CoreCompetency);
+    }
+
+    @Test
+    public void testJobsForEquality() {
+        test_jobFour = new Job("BB", new Employer("BB"), new Location("BB"), new PositionType("BB"), new CoreCompetency("BB"));
+        test_jobFive = new Job("BB", new Employer("BB"), new Location("BB"), new PositionType("BB"), new CoreCompetency("BB"));
+            assertEquals(test_jobFour.getId(), test_jobFive.getId());
     }
 }
